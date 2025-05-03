@@ -1,0 +1,16 @@
+{
+  "name": "node-express-app",
+  "version": "1.0.0",
+  "description": "A simple Node.js/Express app that displays the current date and time",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"No tests defined\" && exit 0"
+  },
+  "author": "Enoch, assisted by AI",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
+
