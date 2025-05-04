@@ -1,14 +1,36 @@
 const express = require('express');
 const app = express();
-
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 app.get('/', (req, res) => {
-  const now = new Date();
-  res.send(`<h1>Current Date and Time</h1><p>${now.toString()}</p>`);
+  const currentDate = new Date();
+  const formattedDate = currentDate.toLocaleString();
+  
+  res.send(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Express App</title>
+      <style>
+        .red-text {
+          color: red;  
+          font-weight: bold;
+        }
+        body {
+          font-family: Arial, sans-serif;
+          padding: 20px;
+          background-color: #f0f0f0;  /* Light gray background */
+        }
+      </style>
+    </head>
+    <body>
+      <h1>Current date and time</h1>
+      <p class="red-text">Current date and time: ${formattedDate}</p>
+    </body>
+    </html>
+  `);
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });
-

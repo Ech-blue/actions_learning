@@ -1,4 +1,5 @@
 {
+  "version": "3.0.4",	
   "name": "node-express-app",
   "version": "1.0.0",
   "description": "A simple Node.js/Express app that displays the current date and time",
