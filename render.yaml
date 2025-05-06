@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: express-time-app
+    runtime: docker
+    env: node
+    buildCommand: npm install
+    startCommand: node index.js
+    port: 10000
+    envVars:
+      - key: NODE_ENV
+        value: production
