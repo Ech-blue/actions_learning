@@ -1,8 +1,12 @@
 services:
   - type: web
     name: express-time-app
-    plan: free
     runtime: docker
-    env: node
-    port: 3000
-    autoDeploy: true
+    buildCommand: |
+      if [ -f package-lock.json ]; then 
+        npm ci --only=production; 
+      else 
+        npm install --only=production; 
+      fi
+    startCommand: node index.js
+    port: 10000
